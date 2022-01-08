@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h4>ADMIN Personality knowledge test</h4>
+        <ul>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Admin Page!</h1><br>
+
+            <div class="input-group">
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" />
+
+                </div>
+                <button type="button" class="btn btn-primary" onclick="search();">Search
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+
+            const mysql = require("mysql");
+            const jwt = require('jsonwebtoken');
+            const bcrypt = require('bcryptjs');
+            const async = require("hbs/lib/async");
+            const { promisify } = require('util');
+
+            const db = mysql.createConnection({
+                host: process.env.DATABASE_HOST,
+                user: process.env.DATABASE_USER,
+                password: process.env.DATABASE_PASSWORD,
+                database: process.env.DATABASE
+            });
+
+            function search () {
+                db.query('SELECT * FROM users WHERE id = ?', [form1], async (error, results) =>{
+                console.log(results);
+
+
+            }
+            };
+
+            
+
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h4>Personality knowledge test</h4>
+        <ul>
+            <li><a href="/homePage">Home Page</a></li>
+            <li><a href="/quiz">Quiz</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li> 
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class = "row">
+            <div class = "col-4">
+                <div class="card">
+                    <div class = "avatar-ctn">
+                        <img scr="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG.png" alt="user profile picture"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class= "card-title"> {{user.name}} </h5>
+                        <p class = "card-text">{{user.date}}</p>
+                        <a href="#" class= "btn btn-primary">{{user.email}}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "col-8">
+                <div class="card text-center">
+                    <div class ="card-header">
+                        Profile Page
+                    </div>
+                    <div class = "card-body">
+                        <h5 class = "card-title">Hey {{user.name}} Welcome back!</h5>
+                        <p class="card-text">This is your profile page with al your information</p>
+                        <a href="/homePage" class="btn brn-primary">Go Home Page</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+</html>

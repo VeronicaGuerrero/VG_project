@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <h4>Personality knowledge test</h4>
+        <ul>
+            <li><a href="/homePage">Home Page</a></li>
+            <li><a href="/quiz">Quiz</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="jumbotron myclass">
+            <h1>Introvert or extrovert test</h1><br>
+            <form id="quiz" name="quiz">
+                <p> 
+                    <b>You usually have ...</b>
+                </p>
+                <input type="radio" id="mc" name="question1" value="One">A. Many friends and acquaintances<br>
+                <input type="radio" id="mc" name="question1" value="Second">B. Few but very close friends<br/><br/>
+
+                <p> You recharge your energy ...</p>
+                <input type="radio" id="mc" name="question2" value="One">A. Being in the company of other people<br>
+                <input type="radio" id="mc" name="question2" value="Second">B. Being alone and calm<br/><br/>
+
+                <p> Would you rather ...</p>
+                <input type="radio" id="mc" name="question3" value="One">A. Going out for drinks with lots of
+                friends<br>
+                <input type="radio" id="mc" name="question3" value="Second">B. A quiet night watching a movie at
+                home<br/><br/>
+
+                <p> When you meet new people ...</p>
+                <input type="radio" id="mc" name="question4" value="One">A. You are very talkative from the
+                beginning<br>
+                <input type="radio" id="mc" name="question4" value="Second">B. You don't usually talk too much until
+                after a
+                while<br/><br/>
+
+                <input id="button" type="button" value="I'm Finished" onclick="check();">
+            </form>
+
+            <div id="after_submit">
+                <p id="message"></p>
+                <a id="button2">
+                    <input type="button" value="More Information">
+                </a>
+
+            </div>
+
+            <button onclick="myFunction()">Restart</button>
+
+            <script>
+                function check() {
+
+                    var question1 = document.quiz.question1.value;
+                    var question2 = document.quiz.question2.value;
+                    var question3 = document.quiz.question3.value;
+                    var question4 = document.quiz.question4.value;
+                    var correct1 = 0;
+                    var correct2 = 0;
+
+                    if (question1 == "One") {
+                        correct1++;
+                    }
+                    if (question1 == "Second") {
+                        correct2++;
+                    }
+                    if (question2 == "One") {
+                        correct1++;
+                    }
+                    if (question2 == "Second") {
+                        correct2++;
+                    }
+                    if (question3 == "One") {
+                        correct1++;
+                    }
+                    if (question3 == "Second") {
+                        correct2++;
+                    }
+                    if (question4 == "One") {
+                        correct1++;
+                    }
+                    if (question4 == "Second") {
+                        correct2++;
+                    }
+
+                    var message = "";
+
+                    var path = "";
+                    if((correct2 == correct1 && correct2 == 0) || correct2 + correct1 != 4){
+                        message = "Complete the test"
+                        path = "/quiz"
+                    }
+                    else if (correct1 > correct2) {
+                        message = "Extrovert"
+                        path = "/extrovert"
+                    } else if (correct2 < correct1) {
+                        message = "Introvert"
+                        path = "/introvert"
+                    }else if (correct2 == correct1 && correct2 != 0){
+                        message = "Ambivert"
+                        path = "/ambivert"
+                    }
+
+                   
+                    console.log(message);
+
+                    document.getElementById("after_submit").style.visibility = "visible";
+                    document.getElementById("message").innerHTML = message;
+                    document.getElementById("message").innerHTML = message;
+                    document.getElementById("button2").href = path;
+
+                    
+                }
+                function myFunction() {
+                    location.reload();
+                }
+
+            </script>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

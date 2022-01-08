@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    {{{cdnmsql}}}
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <h4>Personality knowledge test</h4>
+        <ul>
+            <li><a href="/homePage">Home Page</a></li>
+            <li><a href="/quiz">Quiz</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="jumbotron myclass">
+            <h1>Shy or determined test</h1><br>
+            <form id="quiz" name="quiz" action="test" method="post">
+                <p>
+                    <b>You like meeting new people ...</b>
+                </p>
+                <input type="radio" id="mc" name="question1" value="One">A. Not really, you feel somewhat
+                uncomfortable<br>
+                <input type="radio" id="mc" name="question1" value="Second">B. Yes, it is usually something you are
+                looking for<br /><br />
+
+                <p>
+                    <b>If they ask you to talk about yourself ...</b>
+                </p>
+                <input type="radio" id="mc" name="question2" value="One">A. You feel weird and a little embarrassed<br>
+                <input type="radio" id="mc" name="question2" value="Second">B. You enjoy telling your life<br /><br />
+
+                <p>
+                    <b>In an interview ...</b>
+                </p>
+                <input type="radio" id="mc" name="question3" value="One">A. You are usually nervous and have a hard time
+                remembering what you were going to say<br>
+                <input type="radio" id="mc" name="question3" value="Second">B. You are relaxed and focused<br /><br />
+
+                <p>
+                    <b>If someone asks you a question that is too personal ...</b>
+                </p>
+                <input type="radio" id="mc" name="question4" value="One">A. You blush and feel self-consciousA. You are
+                very talkative from the
+                beginning<br>
+                <input type="radio" id="mc" name="question4" value="Second">B. You respond cheekily<br /><br />
+
+                <p>
+                    <b>If they ask you for a volunteer to do something quite difficult ...</b>
+                </p>
+                <input type="radio" id="mc" name="question5" value="One">A. You keep quiet because it seems to be
+                complicated<br>
+                <input type="radio" id="mc" name="question5" value="Second">B. You offer yourself because surely you are
+                as capable as anyone else<br /><br />
+
+                <input id="button" type="submit" value="I'm Finished" onclick="check();">
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
