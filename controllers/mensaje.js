@@ -69,10 +69,6 @@ controller.Mensaje = async (req, res) => {
     });
 
 
-
-
-
-
     if (mensaje == 'Shy') {
         res.redirect('/shy');
     } else {
